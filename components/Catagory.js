@@ -1,11 +1,12 @@
-import { View, Text } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-const Category = () => {
+const Category = ({imageUrl,title}) => {
   return (
-    <View>
-      <Text>Category</Text>
-    </View>
+    <TouchableOpacity className='relative mr-2'>
+        <Image className="h-20 w-20 rounded" source={{uri:imageUrl}}/>
+        <Text className='absolute bottom-1 left-1 text-white font-bold'>{title}</Text>
+    </TouchableOpacity>
   )
 }
 

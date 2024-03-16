@@ -5,8 +5,12 @@ import {
  UserIcon,
  AdjustmentsHorizontalIcon,
  ChevronDownIcon,
+ MagnifyingGlassIcon,
 } from "react-native-heroicons/outline"
+
 import Catagories from '../components/catagories';
+import FeaturedRow from '../components/FeaturedRow';
+
 const HomeScreen = () => {
     const navigation=useNavigation();
     useLayoutEffect(()=> {
@@ -29,7 +33,8 @@ const HomeScreen = () => {
             </View>
             {/* Search */}
             <View className='flex-row items-center pb-2 space-x-2 px-2'>
-                <View className='flex-row flex-1 p-3 space-x-2 bg-gray-200'>
+                <View className='flex-row flex-1 p-3 space-x-2 bg-gray-200 items-center'>
+                    <MagnifyingGlassIcon size={20} color="grey"/>
                     <TextInput placeholder='Restaurants and cuisines' keyboardType='default'/>
                 </View>
                 <AdjustmentsHorizontalIcon color='#00CC88'/>
@@ -45,6 +50,12 @@ const HomeScreen = () => {
                 {/* Catagories */}
                 <Catagories/>
                 {/* Featured rows */}
+
+                <FeaturedRow id='123' title="Featured" description="Paid placements from our partners" />
+
+                <FeaturedRow id='1234' title="Tasty Discounts" description="Everyone's been enjoying these juicy discounts" />
+
+                <FeaturedRow id='1235' title="Offers near you" description="Why not support your local restaurants tonight" />
             </ScrollView>
         </View>
   )
